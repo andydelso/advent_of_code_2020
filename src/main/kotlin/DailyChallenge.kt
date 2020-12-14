@@ -1,3 +1,4 @@
 interface DailyChallenge {
-    fun solve(): Any?
+    fun solvePart1(): Any
+    fun solvePart2(): Any
 }

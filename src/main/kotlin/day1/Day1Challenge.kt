@@ -7,10 +7,25 @@ import java.io.File
  * https://adventofcode.com/2020/day/1
  */
 class Day1Challenge(private val file: File) : DailyChallenge {
-    override fun solve(): String? {
+    override fun solvePart1(): String {
         val lines = file.readLines()
 
-        // TODO: how can we improve this? Use lambdas? Can we make this address both cases of the problem?
+        for (first in lines) {
+            for (second in lines) {
+                for (third in lines) {
+                    if (first.toInt() + second.toInt() == 2020) {
+                        return (first.toInt() * second.toInt()).toString()
+                    }
+                }
+            }
+        }
+
+        return ""
+    }
+
+    override fun solvePart2(): Any {
+        val lines = file.readLines()
+
         for (first in lines) {
             for (second in lines) {
                 for (third in lines) {
@@ -21,6 +36,6 @@ class Day1Challenge(private val file: File) : DailyChallenge {
             }
         }
 
-        return null
+        return ""
     }
 }
